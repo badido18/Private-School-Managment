@@ -2,11 +2,10 @@
 
 namespace Controllers ;
 
-
 class IndexController extends Controller{
 
 	public function render(){
-		echo "Page Acceuil";
+		$this->view('HomeView');
 	}
 
 }

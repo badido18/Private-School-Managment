@@ -16,6 +16,5 @@ $dotEnv = Dotenv::createImmutable(BASE_PATH);
 $dotEnv->load();
 
 require_once __DIR__.'/router.php' ;
-
 new RouteDispatcher($router);
     
