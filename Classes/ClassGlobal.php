@@ -2,7 +2,7 @@
 
 namespace Classes ;
 
-Class ClassGlobal extends ToModel {
+abstract Class ClassGlobal{
 
     public function __get($property) {
         if (property_exists($this, $property))
@@ -14,4 +14,8 @@ Class ClassGlobal extends ToModel {
             $this->$property = $value;
         return $this;
     }
+
+    abstract public function saveChangesToDb() ;
+    abstract public function deleteFromDb()  ;
+    abstract public function addToDb() ;
 }

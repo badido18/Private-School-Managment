@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes ;
+namespace Classes\other ;
 
 class FoodMenuDay extends ClassGlobal{
 

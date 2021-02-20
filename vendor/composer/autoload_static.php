@@ -23,6 +23,10 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             'PhpOption\\' => 10,
         ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
         'G' => 
         array (
             'GrahamCampbell\\ResultType\\' => 26,
@@ -35,6 +39,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             'Controllers\\' => 12,
             'Config\\' => 7,
+            'Classes\\' => 8,
         ),
     );
 
@@ -55,6 +60,10 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
         'GrahamCampbell\\ResultType\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
@@ -71,11 +80,30 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             0 => __DIR__ . '/../..' . '/config',
         ),
+        'Classes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Classes',
+        ),
     );
 
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Classes\\Activity' => __DIR__ . '/../..' . '/Classes/Activity.php',
+        'Classes\\Article' => __DIR__ . '/../..' . '/Classes/Article.php',
+        'Classes\\ClassGlobal' => __DIR__ . '/../..' . '/Classes/ClassGlobal.php',
+        'Classes\\Classe' => __DIR__ . '/../..' . '/Classes/Classe.php',
+        'Classes\\Course' => __DIR__ . '/../..' . '/Classes/Course.php',
+        'Classes\\Mark' => __DIR__ . '/../..' . '/Classes/Mark.php',
+        'Classes\\Observations' => __DIR__ . '/../..' . '/Classes/Observations.php',
+        'Classes\\ParentClass' => __DIR__ . '/../..' . '/Classes/ParentClass.php',
+        'Classes\\Student' => __DIR__ . '/../..' . '/Classes/Student.php',
+        'Classes\\Teacher' => __DIR__ . '/../..' . '/Classes/Teacher.php',
+        'Classes\\User' => __DIR__ . '/../..' . '/Classes/User.php',
+        'Classes\\other\\Carrousel' => __DIR__ . '/../..' . '/Classes/other/Carrousel.php',
+        'Classes\\other\\Contact' => __DIR__ . '/../..' . '/Classes/other/Contact.php',
+        'Classes\\other\\FoodMenuDay' => __DIR__ . '/../..' . '/Classes/other/FoodMenuDay.php',
+        'Classes\\other\\Presentation' => __DIR__ . '/../..' . '/Classes/other/Presentation.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Config\\RouteDispatcher' => __DIR__ . '/../..' . '/config/RouteDispatcher.php',
         'Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/Controllers/Admin/AdminController.php',
@@ -132,6 +160,9 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',
+        'Models\\ArticlesModel' => __DIR__ . '/../..' . '/Models/ArticlesModel.php',
+        'Models\\Model' => __DIR__ . '/../..' . '/Models/Model.php',
+        'Models\\UsersModel' => __DIR__ . '/../..' . '/Models/UsersModel.php',
         'PhpOption\\LazyOption' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/LazyOption.php',
         'PhpOption\\None' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/None.php',
         'PhpOption\\Option' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/Option.php',

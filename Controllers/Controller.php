@@ -9,7 +9,6 @@ class Controller {
 		echo "shared method";
 	}
 
-
 	protected function view($view) {
 		require_once __DIR__.'/../Views/'.$view.'.php' ;
 	} 
