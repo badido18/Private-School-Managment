@@ -15,7 +15,7 @@ abstract Class ClassGlobal{
         return $this;
     }
 
-    abstract public function saveChangesToDb() ;
-    abstract public function deleteFromDb()  ;
-    abstract public function addToDb() ;
+    public function saveChangesToDb(){}
+    public function deleteFromDb(){}
+    public function addToDb(){}
 }

@@ -100,6 +100,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Classes\\Student' => __DIR__ . '/../..' . '/Classes/Student.php',
         'Classes\\Teacher' => __DIR__ . '/../..' . '/Classes/Teacher.php',
         'Classes\\User' => __DIR__ . '/../..' . '/Classes/User.php',
+        'Classes\\Validator' => __DIR__ . '/../..' . '/Classes/Validator.php',
         'Classes\\other\\Carrousel' => __DIR__ . '/../..' . '/Classes/other/Carrousel.php',
         'Classes\\other\\Contact' => __DIR__ . '/../..' . '/Classes/other/Contact.php',
         'Classes\\other\\FoodMenuDay' => __DIR__ . '/../..' . '/Classes/other/FoodMenuDay.php',

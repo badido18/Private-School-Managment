@@ -19,6 +19,7 @@ return array(
     'Classes\\Student' => $baseDir . '/Classes/Student.php',
     'Classes\\Teacher' => $baseDir . '/Classes/Teacher.php',
     'Classes\\User' => $baseDir . '/Classes/User.php',
+    'Classes\\Validator' => $baseDir . '/Classes/Validator.php',
     'Classes\\other\\Carrousel' => $baseDir . '/Classes/other/Carrousel.php',
     'Classes\\other\\Contact' => $baseDir . '/Classes/other/Contact.php',
     'Classes\\other\\FoodMenuDay' => $baseDir . '/Classes/other/FoodMenuDay.php',

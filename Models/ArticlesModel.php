@@ -2,6 +2,7 @@
 
 namespace Models ;
 use Classes\Article ;
+use Classes\Validator;
 
 class ArticlesModel extends Model {
 
@@ -10,9 +11,14 @@ class ArticlesModel extends Model {
         //following
     }
 
-    public function getArticles(){
-        
-        $req = $this->dbconnection->prepare("SELECT * FROM articles") ;
+    public function getArticles($category='',$page = 1,$perPage=4){
+        $category = Validator::Category($category);
+        $offset = $perPage*($page-1) ;
+        $pre = "SELECT * FROM articles
+        WHERE $category = 1
+        LIMIT $perPage 
+        OFFSET $offset  " ;
+        $req = $this->dbconnection->prepare($pre) ;
         $articles = [] ;
         if ($req->execute()){  
             try {
@@ -29,4 +35,7 @@ class ArticlesModel extends Model {
         }
         return $articles ;
     }
+
+
+
 }

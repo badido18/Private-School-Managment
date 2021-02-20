@@ -32,14 +32,4 @@ class Article extends ClassGlobal{
     public function isinpublic($arg){
         return in_array($arg,$this->public) ;
     }
-
-    public function saveChangesToDb(){
-        return NULL ;
-    }
-    public function deleteFromDb() {
-        return NULL ;
-    }
-    public function addToDb() {
-        return NULL ;
-    }
 }
