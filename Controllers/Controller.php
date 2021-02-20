@@ -10,9 +10,9 @@ class Controller {
 	}
 
 
-	public function view($view) {
+	protected function view($view) {
 		require_once __DIR__.'/../Views/'.$view.'.php' ;
-	}
+	} 
 
 	//function that verifies credential for aceess
 }

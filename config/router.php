@@ -1,9 +1,16 @@
 <?php
-    
-    $router = new AltoRouter() ;
-    $router->map('GET','/','Controllers\IndexController@render','Accueil');
-    $router->map('GET','/login','Controllers\LoginController@render','SignIn');    
 
-    //Admin routes
+$router = new AltoRouter() ;
 
-    $router->map('GET','/admin','Controllers\Admin\AdminController@render','Admin panel');  
+//public routes
+$router->map('GET','/','Controllers\HomeController@render','Accueil');
+$router->map('GET','/accueil','Controllers\HomeController@render','Home');
+$router->map('GET','/contact','Controllers\ContactController@render','Contact');   
+$router->map('GET','/presentation','Controllers\PresentationController@render','Presentation');
+$router->map('GET','/education','Controllers\EducLevelController@render','EducLevel'); 
+//auth routes
+$router->map('GET','/login','Controllers\LoginController@render','Login'); 
+$router->map('GET','/student','Controllers\StudentSpaceController@render','StudentSpace'); 
+$router->map('GET','/parent','Controllers\ParentSpaceController@render','ParentSpace'); 
+//admin routes
+$router->map('GET','/admin','Controllers\Admin\AdminController@render','Admin panel');  

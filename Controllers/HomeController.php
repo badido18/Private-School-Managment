@@ -2,7 +2,7 @@
 
 namespace Controllers ;
 
-class IndexController extends Controller{
+class HomeController extends Controller{
 
 	public function render(){
 		$this->view('HomeView');
