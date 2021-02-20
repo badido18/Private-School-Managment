@@ -19,7 +19,7 @@
 <body>
     <div class="nav">
         <img src="/src/img/logo.png" alt="logo" height="50px" width="65px">
-        Ecole Privé
+        <b>Ecole Privé</b>
     </div>
     <div class="diapo">
         <!--

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 19 fév. 2021 à 03:09
+-- Généré le : ven. 19 fév. 2021 à 18:33
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -73,6 +73,7 @@ CREATE TABLE `classes` (
   `id` int(11) NOT NULL,
   `level` varchar(50) NOT NULL,
   `year` int(11) NOT NULL,
+  `major` varchar(50) DEFAULT NULL,
   `number` int(11) NOT NULL,
   `scheduleurl` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -136,6 +137,8 @@ CREATE TABLE `marks` (
 CREATE TABLE `observations` (
   `id` int(11) NOT NULL,
   `studentid` int(11) NOT NULL,
+  `teacherid` int(11) DEFAULT NULL,
+  `courseid` int(11) DEFAULT NULL,
   `content` varchar(1500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -296,7 +299,9 @@ ALTER TABLE `marks`
 --
 ALTER TABLE `observations`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `linkestudentid` (`studentid`);
+  ADD KEY `linkestudentid` (`studentid`),
+  ADD KEY `linkteacherremark` (`teacherid`),
+  ADD KEY `linkcourseremark` (`courseid`);
 
 --
 -- Index pour la table `parents`
@@ -435,7 +440,9 @@ ALTER TABLE `marks`
 -- Contraintes pour la table `observations`
 --
 ALTER TABLE `observations`
-  ADD CONSTRAINT `linkestudentid` FOREIGN KEY (`studentid`) REFERENCES `students` (`id`);
+  ADD CONSTRAINT `linkcourseremark` FOREIGN KEY (`courseid`) REFERENCES `courses` (`id`),
+  ADD CONSTRAINT `linkestudentid` FOREIGN KEY (`studentid`) REFERENCES `students` (`id`),
+  ADD CONSTRAINT `linkteacherremark` FOREIGN KEY (`teacherid`) REFERENCES `teachers` (`id`);
 
 --
 -- Contraintes pour la table `parents`
