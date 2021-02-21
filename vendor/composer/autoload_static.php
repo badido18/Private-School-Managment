@@ -114,6 +114,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Config\\RouteDispatcher' => __DIR__ . '/../..' . '/config/RouteDispatcher.php',
         'Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/Controllers/Admin/AdminController.php',
         'Controllers\\ArticleController' => __DIR__ . '/../..' . '/Controllers/ArticleController.php',
+        'Controllers\\AuthController' => __DIR__ . '/../..' . '/Controllers/AuthController.php',
         'Controllers\\ContactController' => __DIR__ . '/../..' . '/Controllers/ContactController.php',
         'Controllers\\Controller' => __DIR__ . '/../..' . '/Controllers/Controller.php',
         'Controllers\\EducLevelController' => __DIR__ . '/../..' . '/Controllers/EducLevelController.php',

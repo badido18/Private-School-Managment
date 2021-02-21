@@ -43,6 +43,9 @@ class Controller {
             case 'parent' :
                 header('Location: '.$_ENV['APP_HOST'].'/parent');
                 break;
+            case 'admin' :
+                header('Location: '.$_ENV['APP_HOST'].'/admin');
+                break;
             default:
                 header('Location: '.$_ENV['APP_HOST'].'/login');
                 break;

@@ -28,6 +28,7 @@ return array(
     'Config\\RouteDispatcher' => $baseDir . '/config/RouteDispatcher.php',
     'Controllers\\Admin\\AdminController' => $baseDir . '/Controllers/Admin/AdminController.php',
     'Controllers\\ArticleController' => $baseDir . '/Controllers/ArticleController.php',
+    'Controllers\\AuthController' => $baseDir . '/Controllers/AuthController.php',
     'Controllers\\ContactController' => $baseDir . '/Controllers/ContactController.php',
     'Controllers\\Controller' => $baseDir . '/Controllers/Controller.php',
     'Controllers\\EducLevelController' => $baseDir . '/Controllers/EducLevelController.php',

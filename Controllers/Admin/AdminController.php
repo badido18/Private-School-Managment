@@ -3,10 +3,11 @@
 namespace Controllers\Admin ;
 
 
-class AdminController {
+class AdminController extends \Controllers\Controller {
 
 	public function render(){
-		echo "Admin Page";
+		$this->verifAuth('admin');
+		$this->view('Admin/AdminPanel');
 	}
 
 }
