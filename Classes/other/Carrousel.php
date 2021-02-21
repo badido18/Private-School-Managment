@@ -2,7 +2,7 @@
 
 namespace Classes\other ;
 
-class Carrousel extends ClassGlobal{
+class Carrousel extends \Classes\ClassGlobal{
 
     private $id ;
     private $imgUrl;

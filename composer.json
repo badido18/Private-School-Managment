@@ -4,7 +4,8 @@
             "Controllers\\" : "Controllers",
             "Config\\" :  "config",
             "Models\\" :  "Models",
-            "Classes\\" : "Classes"
+            "Classes\\" : "Classes",
+            "Classes\\other\\" : "Classes/other"
         }
     },
     "require" : {

@@ -39,6 +39,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             'Controllers\\' => 12,
             'Config\\' => 7,
+            'Classes\\other\\' => 14,
             'Classes\\' => 8,
         ),
     );
@@ -80,6 +81,10 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         array (
             0 => __DIR__ . '/../..' . '/config',
         ),
+        'Classes\\other\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Classes/other',
+        ),
         'Classes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
@@ -112,6 +117,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Controllers\\ContactController' => __DIR__ . '/../..' . '/Controllers/ContactController.php',
         'Controllers\\Controller' => __DIR__ . '/../..' . '/Controllers/Controller.php',
         'Controllers\\EducLevelController' => __DIR__ . '/../..' . '/Controllers/EducLevelController.php',
+        'Controllers\\FoodMenuController' => __DIR__ . '/../..' . '/Controllers/FoodMenuController.php',
         'Controllers\\HomeController' => __DIR__ . '/../..' . '/Controllers/HomeController.php',
         'Controllers\\LoginController' => __DIR__ . '/../..' . '/Controllers/LoginController.php',
         'Controllers\\ParentSpaceController' => __DIR__ . '/../..' . '/Controllers/ParentSpaceController.php',
@@ -162,6 +168,9 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',
         'Models\\ArticlesModel' => __DIR__ . '/../..' . '/Models/ArticlesModel.php',
+        'Models\\CarrouselModel' => __DIR__ . '/../..' . '/Models/CarrouselModel.php',
+        'Models\\ContactModel' => __DIR__ . '/../..' . '/Models/ContactModel.php',
+        'Models\\FoodMenuModel' => __DIR__ . '/../..' . '/Models/FoodMenuModel.php',
         'Models\\Model' => __DIR__ . '/../..' . '/Models/Model.php',
         'Models\\UsersModel' => __DIR__ . '/../..' . '/Models/UsersModel.php',
         'PhpOption\\LazyOption' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/LazyOption.php',

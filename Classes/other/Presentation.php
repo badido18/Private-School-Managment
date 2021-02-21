@@ -2,7 +2,7 @@
 
 namespace Classes\other ;
 
-class Presentation extends ClassGlobal{
+class Presentation extends \Classes\ClassGlobal{
 
     private $id ;
     private $imgUrl;

@@ -23,7 +23,7 @@ class ArticlesModel extends Model {
         if ($req->execute()){  
             try {
                 foreach( $req->fetchAll() as $row) {
-                    $articles[] = new Article(intval($row['id']),$row['title'],$row['content']);
+                    $articles[] = new Article(intval($row['id']),$row['title'],$row['content'],$row['imgurl']);
                 }
             }
             catch(\Exception $e){
@@ -36,6 +36,27 @@ class ArticlesModel extends Model {
         return $articles ;
     }
 
+    
+    public function getArticle($id){
+        $pre = "SELECT * FROM articles WHERE id = :id" ;
+        $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(':id',$id,\PDO::PARAM_INT);
+        $article = [] ;
+        if ($req->execute()){  
+            try {
+                foreach( $req->fetchAll() as $row) {
+                    $article = new Article(intval($row['id']),$row['title'],$row['content'],$row['imgurl']);
+                }
+            }
+            catch(\Exception $e){
+                die("ERROR: Could not connect. " . $e->getMessage());
+            }
+        }
+        else {
+            echo "Something went Bad :(";
+        }
+        return $article ;
+    }
 
 
 }

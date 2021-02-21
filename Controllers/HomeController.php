@@ -2,19 +2,19 @@
 
 namespace Controllers ;
 
-use Classes\Article;
 use Models\ArticlesModel;
-
+use Models\CarrouselModel;
 class HomeController extends Controller{
 
 	public function loadArticles($category='',$page=1){
-		$model = new ArticlesModel();
-		return $model->getArticles($category,$page);
+		return (new ArticlesModel())->getArticles($category,$page);
 	}
 
+	public function loadDiapo(){
+		return (new CarrouselModel())->getImageUrls();
+	}
 
 	public function render(){
-		print_r($this->loadArticles());
 		$this->view('HomeView');
 	}
 

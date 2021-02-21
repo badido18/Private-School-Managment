@@ -2,7 +2,7 @@
 
 namespace Classes\other ;
 
-class FoodMenuDay extends ClassGlobal{
+class FoodMenuDay extends \Classes\ClassGlobal{
 
     private $id ;
     private $meal;

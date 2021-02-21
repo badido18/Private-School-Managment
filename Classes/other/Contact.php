@@ -2,7 +2,7 @@
 
 namespace Classes\other ;
 
-class Contact extends ClassGlobal{
+class Contact extends \Classes\ClassGlobal{
 
     private $id ;
     private $type;
