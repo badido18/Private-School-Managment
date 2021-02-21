@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 19 fév. 2021 à 18:33
+-- Généré le : Dim 21 fév. 2021 à 03:05
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.0
 
@@ -52,6 +52,18 @@ CREATE TABLE `articles` (
   `level3` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `content`, `imgurl`, `everyone`, `teachers`, `parents`, `students`, `level1`, `level2`, `level3`) VALUES
+(1, 'Titre', 'Contenu', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL),
+(2, 'Title2', 'Content 2', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL),
+(3, 'Title2', 'Content 2', NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL),
+(4, 'title3', 'conentt 3', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL),
+(5, 'title 4', 'hmida', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(6, 'Everyonetitle', 'content', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +74,13 @@ CREATE TABLE `carrousels` (
   `id` int(11) NOT NULL,
   `imgurl` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `carrousels`
+--
+
+INSERT INTO `carrousels` (`id`, `imgurl`) VALUES
+(1, 'nourl');
 
 -- --------------------------------------------------------
 
@@ -78,6 +97,13 @@ CREATE TABLE `classes` (
   `scheduleurl` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `classes`
+--
+
+INSERT INTO `classes` (`id`, `level`, `year`, `major`, `number`, `scheduleurl`) VALUES
+(1, 'Primaire', 4, NULL, 1, 'NoUrl');
+
 -- --------------------------------------------------------
 
 --
@@ -89,6 +115,14 @@ CREATE TABLE `contacts` (
   `type` varchar(50) NOT NULL,
   `content` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `type`, `content`) VALUES
+(1, 'Email', 'esi@projetweb.dz'),
+(2, 'Telephone', '0233364892');
 
 -- --------------------------------------------------------
 
@@ -113,6 +147,13 @@ CREATE TABLE `foodmenu` (
   `meal` varchar(250) NOT NULL,
   `dayname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `foodmenu`
+--
+
+INSERT INTO `foodmenu` (`id`, `meal`, `dayname`) VALUES
+(1, 'Soupe de legumes - Salade de thon - Fruit de Saison - Jus d\'orange', 'Dimanche');
 
 -- --------------------------------------------------------
 
@@ -179,6 +220,13 @@ CREATE TABLE `presentation` (
   `imgurl` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `presentation`
+--
+
+INSERT INTO `presentation` (`id`, `paragraph`, `imgurl`) VALUES
+(1, 'Presentation de lecole prive du projet web', 'Url de l\'image');
+
 -- --------------------------------------------------------
 
 --
@@ -221,6 +269,13 @@ CREATE TABLE `teachers` (
   `scheduleurl` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `firstname`, `lastname`, `birthdate`, `workhours`, `receptiontime`, `scheduleurl`) VALUES
+(1, 'Nabil', 'Dellys', '1988-11-20', 13, 'Mardi 11H', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -233,11 +288,18 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `passwd` varchar(64) NOT NULL,
   `type` int(10) NOT NULL,
-  `address` int(11) DEFAULT NULL,
+  `address` varchar(256) DEFAULT NULL,
   `phone1` varchar(16) DEFAULT NULL,
   `phone2` varchar(16) DEFAULT NULL,
   `phone3` varchar(16) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `passwd`, `type`, `address`, `phone1`, `phone2`, `phone3`) VALUES
+(1, 'dellys_hachemi', 'dellys@esi.dz', 'b47ea832576a75814e13351dcc97eaa985b9c6b7', 1, NULL, NULL, NULL, NULL);
 
 --
 -- Index pour les tables déchargées
@@ -363,25 +425,25 @@ ALTER TABLE `activities`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `carrousels`
 --
 ALTER TABLE `carrousels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `classes`
 --
 ALTER TABLE `classes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `courses`
@@ -393,7 +455,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT pour la table `foodmenu`
 --
 ALTER TABLE `foodmenu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `marks`
@@ -411,13 +473,13 @@ ALTER TABLE `observations`
 -- AUTO_INCREMENT pour la table `presentation`
 --
 ALTER TABLE `presentation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées

@@ -12,7 +12,7 @@ class RouteDispatcher {
     {
         $this->match = $router->match() ;
         if($this->match){
-            list($controller,$method) = explode('@',$this->match['target']);
+            list($controller,$method) = explode('::',$this->match['target']);
             $this->controller = $controller;
             $this->method = $method;
             if(is_callable(array(new $this->controller, $this->method))){
