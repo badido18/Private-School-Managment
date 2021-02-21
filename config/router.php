@@ -14,7 +14,13 @@ $router->map('GET','/enseignants','Controllers\TeacherController::render','Teach
 $router->map('GET','/emplois','Controllers\ScheduleController::render','Schedules'); 
 //withauth routes
 $router->map('GET','/login','Controllers\LoginController::render','Login'); 
+$router->map('GET','/login/[a:message]','Controllers\LoginController::render','ErrorLogin'); 
+
 $router->map('GET','/student','Controllers\StudentSpaceController::render','StudentSpace'); 
 $router->map('GET','/parent','Controllers\ParentSpaceController::render','ParentSpace'); 
+$router->map('POST','/auth','Controllers\AuthController::login','Auth'); 
+$router->map('POST','/logout','Controllers\AuthController::logout','Logout');
 //admin routes
 $router->map('GET','/admin','Controllers\Admin\AdminController::render','Admin panel');  
+//non implemented routes
+$router->map('GET','/ens','Controllers\TeacherController::renderDashboard','Teacher'); 

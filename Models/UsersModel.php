@@ -18,8 +18,7 @@ class UsersModel extends Model {
         $req = $this->dbconnection->prepare($pre) ;
         $req->bindParam(':username',$username,\PDO::PARAM_STR);
         $req->bindParam(':passwd',$passwd,\PDO::PARAM_STR);
-        $userCredentials = [] ;
-        
+        $userCredentials = NULL ;
         if ($req->execute()){  
             try {
                 foreach( $req->fetchAll() as $row) {
@@ -34,6 +33,27 @@ class UsersModel extends Model {
             echo "Something went Bad :(";
         }
         return $userCredentials ;
+    }
+
+    public function verifyUser($username,$passwd,$type){
+        $pre = "SELECT * FROM users WHERE (username = :username OR email = :username) AND (passwd = :passwd)" ;
+        $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(':username',$username,\PDO::PARAM_STR);
+        $req->bindParam(':passwd',$passwd,\PDO::PARAM_STR);
+        if ($req->execute()){  
+            try { 
+                $result = $req->fetch();
+                if ($result and User::translateAccType($result['type'])===$type)
+                    return TRUE ;
+                return FALSE ;
+            }
+            catch(\Exception $e){
+                die("ERROR: Could not connect. " . $e->getMessage());
+            }
+        }
+        else {
+            echo "Something went Bad :(";
+        }
     }
 
 }
