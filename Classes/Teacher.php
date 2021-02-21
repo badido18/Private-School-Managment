@@ -13,7 +13,7 @@ class Teacher extends ClassGlobal{
     private $receptionTime;
     private $scheduleUrl ;
 
-    public function __construct( $id ,$firstName, $lastName,$birthDate,$workHours = 0,$receptionTime = NULL , $scheduleUrl = NULL){
+    public function __construct( $id ,$firstName, $lastName, $birthDate = NULL  ,$receptionTime = NULL,$workHours = 0 , $scheduleUrl = NULL){
 		$this->id = $id ;
 		$this->firstName = $firstName ;
 		$this->lastName = $lastName ;
