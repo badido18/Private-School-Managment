@@ -25,6 +25,9 @@ $router->map('GET','/admin/articles/managment','Controllers\Admin\ArticlesManagm
 $router->map('POST','/admin/articles/add','Controllers\Admin\ArticlesManagmentController::addArticle','Article add');   
 $router->map('POST','/admin/articles/delete','Controllers\Admin\ArticlesManagmentController::deleteArticle','Article delete');  
 $router->map('POST','/admin/articles/update','Controllers\Admin\ArticlesManagmentController::updateArticle','Article update');  
-$router->map('GET','/admin/users/managment','Controllers\Admin\UsersManagmentController::render','users panel');  
+$router->map('GET','/admin/users/managment','Controllers\Admin\UsersManagmentController::render','Users panel');  
+$router->map('POST','/admin/users/add','Controllers\Admin\UsersManagmentController::addUser','User add');   
+$router->map('POST','/admin/users/delete','Controllers\Admin\UsersManagmentController::deleteUser','User delete');  
+$router->map('POST','/admin/users/update','Controllers\Admin\UsersManagmentController::updateUser','user update'); 
 //non implemented routes
 $router->map('GET','/ens','Controllers\TeacherController::renderDashboard','Teacher'); 
