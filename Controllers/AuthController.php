@@ -13,17 +13,16 @@ class AuthController extends Controller{
             $userCredentials = (new UsersModel)->getUser($username,$passwd);
             if(isset($userCredentials)){
                 $this->setCookies($userCredentials) ;
-                $this->redirect() ;
+                $this->redirectAuth() ;
             }
             else{
-                header('Location: '.$_ENV['APP_HOST']."/login/error");
-                //$this->redirect() ;
+                $this->throwError("login");
             };
         }
 	}
 
-
     private function setCookies($userCredentials){
+        setcookie($_ENV['PREFIX'].'/id',$userCredentials->__get('id')) ;
         setcookie($_ENV['PREFIX'].'/username',$userCredentials->__get('username')) ;
         setcookie($_ENV['PREFIX'].'/hash_passwd',$userCredentials->__get('passwd')) ;
         setcookie($_ENV['PREFIX'].'/user_type',$userCredentials->__get('type')) ;

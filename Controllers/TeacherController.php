@@ -9,6 +9,7 @@ class TeacherController extends Controller{
 	public function loadTeachers(){
 		return (new TeachersModel())->getTeachers();
 	}
+	
 	public function render(){
 		$this->view('TeachersView');
 	}

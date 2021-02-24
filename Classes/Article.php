@@ -8,13 +8,16 @@ class Article extends ClassGlobal{
     private $title ;
     private $content ;
     private $imgUrl ;
-    public $public = [] ;
+    public $public ;
+    public static $NumberOfCategories = 7;
+    public static $Categories = ['everyone','teacher','parents','students','level1','level2','level3'] ;
 
-    public function __construct($id,$title,$content,$imgUrl=NULL){  
+    public function __construct($id,$title,$content,$imgUrl=NULL,$public=[]){  
         $this->id = $id ;
         $this->content = $content ;
         $this->title = $title ;
         $this->imgUrl = $imgUrl ;
+        $this->public = $public ;
     }
     public function setpublic($arg,$val){
         $this->public[$arg] = $val ;
@@ -31,5 +34,16 @@ class Article extends ClassGlobal{
 
     public function isinpublic($arg){
         return in_array($arg,$this->public) ;
+    }
+
+    public function __get($property) {
+        if (property_exists($this, $property))
+            return $this->$property;
+    }
+
+    public function __set($property, $value) {
+        if (property_exists($this, $property)) 
+            $this->$property = $value;
+        return $this;
     }
 }

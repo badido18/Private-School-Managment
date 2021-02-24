@@ -3,6 +3,8 @@
 namespace Controllers ;
 
 use Models\UsersModel;
+use Serializable;
+
 class Controller {
 
     private $restrictedRedirectionRoutes = ['/login','/login/error'] ;
@@ -23,15 +25,13 @@ class Controller {
 		return ;
 	}
 
-
     protected function verifyCookie(){
         if(isset($_COOKIE[$_ENV['PREFIX'].'/username']))
             return (new UsersModel)->verifyUser($_COOKIE[$_ENV['PREFIX'].'/username'],$_COOKIE[$_ENV['PREFIX'].'/hash_passwd'],$_COOKIE[$_ENV['PREFIX'].'/user_type']) ;
         return FALSE ;
     }
 
-	
-    public function redirect($userCredentials = NULL){
+    public function redirectAuth($userCredentials = NULL){
         $type = $userCredentials ? $userCredentials->__get('type') : $_COOKIE[$_ENV['PREFIX'].'/user_type'] ;
         switch ($type) {
             case 'student':
@@ -52,19 +52,37 @@ class Controller {
         }
     }
 
+    public function redirect($linkFromRoot){
+        header('Location: '.$_ENV['APP_HOST']."/$linkFromRoot");
+    }
+
+
+    public function redirectToReferer(){
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
+
+    public function throwError($route=NULL){
+        if(isset($route))
+            header('Location: '.$_ENV['APP_HOST']."/$route/error");
+        else
+            header('Location: '.$_SERVER['REQUEST_URI']."/error");
+    }
 
 	public function verifAuth($userType){
 		if($this->verifyCookie()){
 			if($_COOKIE[$_ENV['PREFIX'].'/user_type']!== $userType){
-				$this->redirect();
+				$this->redirectAuth();
 			}
 		}
 		else{
-            if(!in_array(apache_getenv("REQUEST_URI"),$this->restrictedRedirectionRoutes))
+            if(!in_array($_SERVER["REQUEST_URI"],$this->restrictedRedirectionRoutes))
                 header('Location: '.$_ENV['APP_HOST'].'/login');
         }
 			
 	}
-	//function that verifies credential for aceess to do here
+
+    public function getCookie($name){
+        return $_COOKIE[$_ENV['PREFIX']."/$name"] ;
+    }
 }
 

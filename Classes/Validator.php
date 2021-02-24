@@ -5,7 +5,7 @@ namespace Classes ;
 class Validator{
 
     static public function Category($category){
-        if (in_array($category,['everyone','teacher','parents','students','level1','level2','level3']))
+        if (in_array($category,Article::$Categories))
             return $category ;
         return 0 ;  
     }

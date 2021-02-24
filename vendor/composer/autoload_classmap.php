@@ -27,6 +27,8 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Config\\RouteDispatcher' => $baseDir . '/config/RouteDispatcher.php',
     'Controllers\\Admin\\AdminController' => $baseDir . '/Controllers/Admin/AdminController.php',
+    'Controllers\\Admin\\ArticlesManagmentController' => $baseDir . '/Controllers/Admin/ArticlesManagmentController.php',
+    'Controllers\\Admin\\UsersManagmentController' => $baseDir . '/Controllers/Admin/UsersManagmentController.php',
     'Controllers\\ArticleController' => $baseDir . '/Controllers/ArticleController.php',
     'Controllers\\AuthController' => $baseDir . '/Controllers/AuthController.php',
     'Controllers\\ContactController' => $baseDir . '/Controllers/ContactController.php',

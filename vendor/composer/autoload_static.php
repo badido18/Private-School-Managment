@@ -113,6 +113,8 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Config\\RouteDispatcher' => __DIR__ . '/../..' . '/config/RouteDispatcher.php',
         'Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/Controllers/Admin/AdminController.php',
+        'Controllers\\Admin\\ArticlesManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/ArticlesManagmentController.php',
+        'Controllers\\Admin\\UsersManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/UsersManagmentController.php',
         'Controllers\\ArticleController' => __DIR__ . '/../..' . '/Controllers/ArticleController.php',
         'Controllers\\AuthController' => __DIR__ . '/../..' . '/Controllers/AuthController.php',
         'Controllers\\ContactController' => __DIR__ . '/../..' . '/Controllers/ContactController.php',
