@@ -28,6 +28,10 @@ $router->map('POST','/admin/articles/update','Controllers\Admin\ArticlesManagmen
 $router->map('GET','/admin/users/managment','Controllers\Admin\UsersManagmentController::render','Users panel');  
 $router->map('POST','/admin/users/add','Controllers\Admin\UsersManagmentController::addUser','User add');   
 $router->map('POST','/admin/users/delete','Controllers\Admin\UsersManagmentController::deleteUser','User delete');  
-$router->map('POST','/admin/users/update','Controllers\Admin\UsersManagmentController::updateUser','user update'); 
+$router->map('POST','/admin/users/update','Controllers\Admin\UsersManagmentController::updateUser','user update');   
+$router->map('GET','/admin/contacts/managment','Controllers\Admin\ContactManagmentController::render','Contacts panel');  
+$router->map('POST','/admin/contacts/add','Controllers\Admin\ContactManagmentController::addContact','Contact add');   
+$router->map('POST','/admin/contacts/delete','Controllers\Admin\ContactManagmentController::deleteContact','Contact delete');  
+$router->map('POST','/admin/contacts/update','Controllers\Admin\ContactManagmentController::updateContact','Contact update'); 
 //non implemented routes
 $router->map('GET','/ens','Controllers\TeacherController::renderDashboard','Teacher'); 

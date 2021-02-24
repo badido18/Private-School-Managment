@@ -16,5 +16,8 @@
 <form action="/admin/users/managment" method="get">
     <button>Gestion des Utilisateurs</button>
 </form>
+<form action="/admin/contacts/managment" method="get">
+    <button>Gestion des Contacts</button>
+</form>
 </body>
 </html>
