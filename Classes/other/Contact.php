@@ -24,4 +24,7 @@ class Contact extends \Classes\ClassGlobal{
             $this->$property = $value;
         return $this;
     }
+	public function jsonSerialize() {
+        return (object) get_object_vars($this);
+    }
 }

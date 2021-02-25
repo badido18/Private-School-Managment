@@ -30,4 +30,33 @@ class CarrouselModel extends Model {
         return $imgUrls ;
     }
 
+
+    public function addToCarrousel($imgUrl){
+		$pre = "INSERT INTO carrousels (imgUrl) VALUES (?)" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(1,$imgUrl,\PDO::PARAM_STR);
+		if ($req->execute()){ 
+			return TRUE ; 
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return FALSE ;
+	}
+
+	public function deleteFromCarrousel($id){
+		$pre = "DELETE FROM carrousels WHERE id = ?" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(1,$id,\PDO::PARAM_INT);
+		if ($req->execute()){ 
+			return TRUE ; 
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return FALSE ;
+	}
+
+
+
 }

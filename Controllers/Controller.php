@@ -25,6 +25,13 @@ class Controller {
 		return ;
 	}
 
+    protected function returnJson($data){
+        $response['success']= TRUE ;
+        $response['data'] =  $data ;
+        header('Content-Type: application/json');
+        echo json_encode($response) ;
+    }
+
     protected function verifyCookie(){
         if(isset($_COOKIE[$_ENV['PREFIX'].'/username']))
             return (new UsersModel)->verifyUser($_COOKIE[$_ENV['PREFIX'].'/username'],$_COOKIE[$_ENV['PREFIX'].'/hash_passwd'],$_COOKIE[$_ENV['PREFIX'].'/user_type']) ;

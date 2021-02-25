@@ -31,5 +31,48 @@ class PresentationModel extends Model {
     }
 
 
+    public function addPres($paragraph,$imgUrl){
+		$pre = "INSERT INTO presentation (paragraph, imgurl) VALUES (?,?)" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(1,$paragraph,\PDO::PARAM_STR);
+		$req->bindParam(2,$imgUrl,\PDO::PARAM_STR);
+		if ($req->execute()){ 
+			return TRUE ; 
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return FALSE ;
+	}
+
+	public function deletePres($id){
+		$pre = "DELETE FROM presentation WHERE id = ?" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(1,$id,\PDO::PARAM_INT);
+		if ($req->execute()){ 
+			return TRUE ; 
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return FALSE ;
+	}
+
+
+	public function updatePres($id,$arg,$value){
+		$arg = trim($arg);
+		$pre = "UPDATE presentation SET $arg = ? WHERE id = ?" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(1,$value,\PDO::PARAM_STR);
+		$req->bindParam(2,$id,\PDO::PARAM_INT);
+		if ($req->execute()){ 
+			return TRUE ; 
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return FALSE ;
+	}
+
 
 }
