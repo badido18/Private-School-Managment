@@ -3,7 +3,6 @@
 namespace Controllers ;
 
 use Models\UsersModel;
-use Serializable;
 
 class Controller {
 
