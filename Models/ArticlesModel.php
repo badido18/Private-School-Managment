@@ -3,6 +3,7 @@
 namespace Models ;
 use Classes\Article ;
 use Classes\Validator;
+use GrahamCampbell\ResultType\Result;
 
 class ArticlesModel extends Model {
 
@@ -16,6 +17,7 @@ class ArticlesModel extends Model {
 		$offset = $perPage*($page-1) ;
 		$pre = "SELECT * FROM articles
 		WHERE $category = 1
+		ORDER BY id DESC
 		LIMIT $perPage 
 		OFFSET $offset  " ;
 		$req = $this->dbconnection->prepare($pre) ;
@@ -36,6 +38,22 @@ class ArticlesModel extends Model {
 		return $articles ;
 	}
 
+	public function getPages($perPage = 4){
+		$pre = "SELECT count(*) FROM articles" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		if ($req->execute()){  
+			try {
+				return ceil($req->fetch()[0] / $perPage ) ;
+			}
+			catch(\Exception $e){
+				die("ERROR: Could not connect. " . $e->getMessage());
+			}
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return 0 ;
+	}
 	
 	public function getArticle($id){
 		$pre = "SELECT * FROM articles WHERE id = :id" ;
