@@ -10,8 +10,7 @@ class PresentationController extends Controller{
 		return (new PresentationModel())->getPres();
 	}
 
-	public function render(){
-		print_r($this->loadPresentation());
+	public function render(){	
 		$this->view('PresentationView');
 	}
 

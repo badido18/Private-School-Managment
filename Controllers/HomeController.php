@@ -12,7 +12,7 @@ class HomeController extends Controller{
 		return (new ArticlesModel())->getPages($perPage);
 	}
 
-	public function loadArticles($category='',$perPage=8){
+	public function loadArticles($category='everyone',$perPage=8){
 		return (new ArticlesModel())->getArticles($category,$this->currentPage,$perPage);
 	}
 

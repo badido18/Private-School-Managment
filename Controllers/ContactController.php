@@ -10,7 +10,6 @@ class ContactController extends Controller{
 	}
 
 	public function render(){
-		print_r($this->loadContacts());
 		$this->view('ContactView');
 	}
 
