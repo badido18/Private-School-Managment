@@ -14,6 +14,10 @@ body {
     padding: 0;
 }
 
+*:focus {
+    outline-color: var(--blue);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -21,11 +25,14 @@ a {
 
 :root {
     --blue: #4A6BFF;
+    --light-blue: #91a5fd;
     --dark-blue: #203385;
     --white: #ffffff;
     --black: #3D3D3D;
     --gray: #f5F5F5;
     --dark-gray: #646464;
+    --darker-gray: #b8b8b8;
+    --red: rgb(235, 57, 57);
 }
 
 h3 {
@@ -96,7 +103,6 @@ h3 {
     margin: 0;
     padding: 0;
     object-fit: cover;
-    display: block;
     transform: scale(1.01);
     transition: 0.3s ease;
 }
@@ -211,6 +217,10 @@ h3 {
     color: var(--dark-gray);
 }
 
+.co-gray {
+    color: var(--darker-gray);
+}
+
 .co-dark-blue {
     color: var(--dark-blue);
 }
@@ -219,12 +229,32 @@ h3 {
     color: var(--blue);
 }
 
+.co-red {
+    color: var(--red);
+}
+
 .co-white {
     color: white;
 }
 
 .bld {
     font-weight: bold;
+}
+
+.lgt {
+    font-weight: normal;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.t-small {
+    font-size: 12px;
+}
+
+.nowhitespace::before {
+    content: none;
 }
 
 .content {
@@ -387,12 +417,12 @@ h3 {
 
 .presentation .text p {
     width: 75%;
-    font-size: 18px;
+    font-size: 16px;
     white-space: pre-wrap;
     line-height: 25px;
 }
 
-.presentation .text p:before {
+.presentation .textp p:before {
     content: "\00a0 \00a0 \00a0 \00a0 ";
 }
 
@@ -410,4 +440,90 @@ h3 {
     display: flex;
     animation: fadeIn 1s ease;
     margin-bottom: 10px;
+}
+
+.presentation .imgs2 {
+    width: 30%;
+    display: flex;
+    position: relative;
+    top: -100px;
+    flex-direction: column;
+}
+
+.presentation .imgs2 img {
+    width: 100%;
+    border-radius: 5px;
+    height: 500px;
+    object-fit: cover;
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+
+.presentation .text form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    animation: fadeIn 1s;
+}
+
+.presentation .text form * {
+    width: 500px;
+    max-height: 80%;
+    height: 45px;
+    margin: 15px;
+}
+
+.presentation .text form input {
+    border: solid 2px var(--light-blue);
+    border-radius: 5px;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: normal;
+    transition: 0.3s ease;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.presentation .text form button {
+    width: 515px;
+    height: 50px;
+}
+
+.presentation .text form input::placeholder {
+    color: var(--light-blue);
+    font-weight: normal;
+}
+
+.presentation .text form input:focus {
+    outline-color: var(--blue);
+    font-weight: bold;
+    padding-left: 15px;
+    transform: scale(1.05);
+}
+
+button {
+    border: none;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--blue);
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: var(--dark-blue);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+    outline: none;
+    transform: scale(1.05);
 }

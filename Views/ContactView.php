@@ -19,11 +19,11 @@
             <?php
                 $contacts = $this->loadContacts() ;
                 foreach ($contacts as $elt) {
-                    echo "<p class=\" paragraph\"> <span class=\"co-blue bld\">$elt->type :</span>  $elt->content</p> <br>" ;
+                    echo "<p class=\" paragraph co-blue bld\"> <span class=\"co-dark-gray lgt\">$elt->type :&nbsp;&nbsp;&nbsp;&nbsp;</span> $elt->content</p> <br>" ;
                 }
             ?>
         </div>
-        <div class="imgs">
+        <div class="imgs2">
             <img src="/src/img/classroom2.jpg" alt="" srcset="">
         </div>
         </div>

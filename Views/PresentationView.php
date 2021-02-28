@@ -15,7 +15,7 @@
 	<div class="content">
 		<h1>Présentation de l'école</h1>
         <div class="presentation">
-        <div class="text">
+        <div class="text textp">
             <?php
                 $presentation = $this->loadPresentation() ;
                 foreach ($presentation as $elt) {
