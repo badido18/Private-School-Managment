@@ -20,6 +20,15 @@ class Classe extends ClassGlobal {
 		$this->scheduleUrl = $scheduleUrl ;
 	}
 
+	static public function getLevelName($level){
+		switch($level){
+			case 1 : return "Primaire" ; break;
+			case 2 : return "Moyen" ; break;
+			case 3 : return "Secondaire" ; break;
+			default : return null ;
+		}
+	}
+
 	public function getstudents(){
 		//call model for that request
 		return NULL ;

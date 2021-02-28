@@ -9,6 +9,7 @@ $router->map('GET','/home/articles/[i:page]','Controllers\HomeController::render
 $router->map('GET','/contact','Controllers\ContactController::render','Contact');   
 $router->map('GET','/presentation','Controllers\PresentationController::render','Presentation');
 $router->map('GET','/education/[i:level]','Controllers\EducLevelController::render','EducLevel'); 
+$router->map('GET','/education/[i:level]/articles/[i:page]','Controllers\EducLevelController::render','EducLevel articles'); 
 $router->map('GET','/restauration','Controllers\FoodMenuController::render','FoodMenu'); 
 $router->map('GET','/article/[i:id]','Controllers\ArticleController::render','Article');  
 $router->map('GET','/enseignants','Controllers\TeacherController::render','Teachers'); 

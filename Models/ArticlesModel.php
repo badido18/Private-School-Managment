@@ -38,8 +38,9 @@ class ArticlesModel extends Model {
 		return $articles ;
 	}
 
-	public function getPages($perPage = 4){
-		$pre = "SELECT count(*) FROM articles" ;
+	public function getPages($category,$perPage = 4){
+		$category = Validator::Category($category);
+		$pre = "SELECT count(*) FROM articles WHERE $category = 1" ;
 		$req = $this->dbconnection->prepare($pre) ;
 		if ($req->execute()){  
 			try {

@@ -7,13 +7,14 @@ use Models\CarrouselModel;
 class HomeController extends Controller{
 
 	public $currentPage = 1 ;
+	public $link = "/home/articles" ;
 
 	public function loadPages($perPage=8){
-		return (new ArticlesModel())->getPages($perPage);
+		return (new ArticlesModel())->getPages('everyone',$perPage);
 	}
 
-	public function loadArticles($category='everyone',$perPage=8){
-		return (new ArticlesModel())->getArticles($category,$this->currentPage,$perPage);
+	public function loadArticles($perPage=8){
+		return (new ArticlesModel())->getArticles('everyone',$this->currentPage,$perPage);
 	}
 
 	public function loadDiapo(){

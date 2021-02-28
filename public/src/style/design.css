@@ -527,3 +527,63 @@ button:focus {
     outline: none;
     transform: scale(1.05);
 }
+
+.optionHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.option {
+    width: 250px;
+    height: 250px;
+    border: solid 3px var(--gray);
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.option:hover p {
+    color: white;
+}
+
+.option * {
+    margin: auto;
+    margin-top: 0;
+    width: 85%;
+    margin-bottom: 15px;
+}
+
+.option img {
+    width: 50%;
+    height: 50%;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.option h3 {
+    font-size: 20px;
+}
+
+.option p {
+    font-size: 14px;
+    overflow: hidden;
+    height: 150px;
+    white-space: normal;
+    color: var(--dark-gray);
+    text-overflow: ellipsis;
+    transition: 0.3s ease;
+}
