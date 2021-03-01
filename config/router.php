@@ -12,8 +12,9 @@ $router->map('GET','/education/[i:level]','Controllers\EducLevelController::rend
 $router->map('GET','/education/[i:level]/articles/[i:page]','Controllers\EducLevelController::render','EducLevel articles'); 
 $router->map('GET','/restauration','Controllers\FoodMenuController::render','FoodMenu'); 
 $router->map('GET','/article/[i:id]','Controllers\ArticleController::render','Article');  
-$router->map('GET','/enseignants','Controllers\TeacherController::render','Teachers'); 
-$router->map('GET','/emplois','Controllers\ScheduleController::render','Schedules'); 
+$router->map('GET','/enseignants/[i:level]','Controllers\TeacherController::render','Teachers'); 
+$router->map('GET','/emplois/[i:level]','Controllers\ScheduleController::render','Schedules'); 
+$router->map('GET','/emplois/[i:level]/[i:classid]','Controllers\ScheduleController::render','Schedules class');
 //withauth routes
 $router->map('GET','/login','Controllers\LoginController::render','Login'); 
 $router->map('GET','/login/[a:message]','Controllers\LoginController::render','ErrorLogin'); 

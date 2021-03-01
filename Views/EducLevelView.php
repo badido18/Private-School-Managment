@@ -10,7 +10,7 @@
 <body>
 	<?php
 		require_once __DIR__.'/Components/Nav.php';
-		require_once __DIR__.'/Components/Diapo.php';
+		//require_once __DIR__.'/Components/Diapo.php';
 		require_once __DIR__.'/Components/Menu.php';
 	?>
 	<div class="content">
@@ -18,17 +18,17 @@
             echo "<h1>Enseignement $this->levelName</h1>";
         ?>
         <div class="optionHolder">
-            <a href="/emplois">
+            <a <?php echo "href = \"/emplois/".$this->level."\"" ?> >
                 <div class="option">
                     <img src="/src/img/schedule.svg" alt="">
                     <h3>Emploi du Temps</h3>
                     <p>Consulter les emplois du temps global des etudiants</p>
                 </div>
             </a>
-            <a href="/enseignants">
+            <a <?php echo "href = \"/enseignants/".$this->level."\"" ?> >
                 <div class="option">
                     <img src="/src/img/teacher.svg" alt="">
-                    <h3>Ensegnants</h3>
+                    <h3>Enseignants</h3>
                     <p>Voir nos enseignants et leur heures de reception</p>
                 </div>
             </a>

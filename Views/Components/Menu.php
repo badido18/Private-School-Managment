@@ -1,4 +1,5 @@
 <div class="menu">
+    <a href="/accueil"> <p>Accueil</p></a>
     <a href="/presentation"> <p>Presentation</p></a>
     <a href="/education/1"> <p>Primaire</p></a>
     <a href="/education/2"> <p>Moyen</p></a>

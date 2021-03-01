@@ -6,6 +6,7 @@ class Classe extends ClassGlobal {
 
 	private $id ;
 	private $level ;
+	private $levelNumber ;
 	private $year ;
 	private $number ;
 	private $major ;
@@ -13,7 +14,8 @@ class Classe extends ClassGlobal {
 
 	public function __construct($id ,$level, $year,$number, $major = NULL, $scheduleUrl = NULL){
 		$this->id = $id ;
-		$this->level = $level ;
+		$this->level = $this->getLevelName($level) ;
+		$this->levelNumber = $level ;
 		$this->year = $year ;
 		$this->number = $number ; 
 		$this->major = $major ;
@@ -27,6 +29,32 @@ class Classe extends ClassGlobal {
 			case 3 : return "Secondaire" ; break;
 			default : return null ;
 		}
+	}
+
+	public static  $Majors = ['Scientifique','Math','Technique Math','Langues','Gestion'] ;
+
+	private function getMajorFormat($major){
+		switch ($major) {
+			case 'Scientifique': return "S" ; break;
+			case 'Math': return "M" ; break;
+			case 'Technique Math': return "TM" ; break;
+			case 'Langues': return "L" ; break;
+			case 'Gestion': return "G" ; break;
+			default: return "N" ; break;
+		}
+	}
+
+	private function getLevelFormat($level,$major){
+		switch ($level) {
+			case 1 : return "AP" ;break;
+			case 2 : return "AM" ;break;
+			case 3 : return $this->getMajorFormat($major) ; break;
+			default: return "A" ; break;
+		}
+	}
+
+	public function getName(){
+		return $this->year.$this->getLevelFormat($this->levelNumber,$this->major).$this->number ;
 	}
 
 	public function getstudents(){

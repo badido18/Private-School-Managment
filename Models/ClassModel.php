@@ -31,16 +31,16 @@ class ClassModel extends Model {
 		return $classes ;
 	}
 
-	
-	public function getClassSchedule($id){
-		$pre = "SELECT scheduleUrl FROM classes WHERE id = :id" ;
+	public function getClassesWithLevel($level){
+		$pre = "SELECT * FROM classes WHERE level = ?" ;
 		$req = $this->dbconnection->prepare($pre) ;
-		$req->bindParam(':id',$id,\PDO::PARAM_INT);
-        $schedule = NULL ;
+		$req->bindParam(1,$level,\PDO::PARAM_INT);
+		$classes = [] ;
 		if ($req->execute()){  
 			try {
-				$result = $req->fetch() ;
-                $schedule = new Classe(intval($result['id']),$result['level'],$result['year'],$result['number'],$result['major'],$result['scheduleurl']);
+				foreach( $req->fetchAll() as $row) {
+					$classes[] = new Classe(intval($row['id']),$row['level'],$row['year'],$row['number'],$row['major'],$row['scheduleurl']);
+				}
 			}
 			catch(\Exception $e){
 				die("ERROR: Could not connect. " . $e->getMessage());
@@ -49,7 +49,28 @@ class ClassModel extends Model {
 		else {
 			echo "Something went Bad :(";
 		}
-		return $schedule ;
+		return $classes ;
+	}
+
+
+	public function getClasse($id){
+		$pre = "SELECT * FROM classes WHERE id = :id" ;
+		$req = $this->dbconnection->prepare($pre) ;
+		$req->bindParam(':id',$id,\PDO::PARAM_INT);
+        $classe = NULL ;
+		if ($req->execute()){  
+			try {
+				$result = $req->fetch() ;
+                $classe = new Classe(intval($result['id']),$result['level'],$result['year'],$result['number'],$result['major'],$result['scheduleurl']);
+			}
+			catch(\Exception $e){
+				die("ERROR: Could not connect. " . $e->getMessage());
+			}
+		}
+		else {
+			echo "Something went Bad :(";
+		}
+		return $classe ;
 	}
 
 	public function addClass($classe){
