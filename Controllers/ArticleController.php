@@ -7,13 +7,19 @@ use Models\ArticlesModel;
 
 class ArticleController extends Controller{
 
-	public function loadArticle($id){
-		return (new ArticlesModel())->getArticle(Validator::Num($id));
+	private $id ;
+	public $article ;
+
+	public function loadArticle(){
+		return (new ArticlesModel())->getArticle(Validator::Num($this->id));
 	}
 
 	public function render($params){
-		$data = $this->loadArticle($params['id']) ;
-		$this->verifData($data);
+		if(isset($params['id'])){
+			$this->id = $params['id'] ;
+			$this->article = $this->loadArticle() ;
+			$this->verifData($this->article);
+		}
 		$this->view('ArticlePageView');
 	}
 

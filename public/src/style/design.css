@@ -637,3 +637,33 @@ button:focus {
     margin-right: 0;
     animation: fadeIn 1s ease;
 }
+
+.articleImgCtn {
+    width: 100%;
+}
+
+.articleImgCtn img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.articleTextCtn {
+    width: 100%;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.articleTextCtn h1 {
+    margin-bottom: 50px;
+}
+
+.articleTextCtn p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.articleTextCtn p::before {
+    content: "\0a00";
+}
