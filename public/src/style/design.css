@@ -667,3 +667,60 @@ button:focus {
 .articleTextCtn p::before {
     content: "\0a00";
 }
+
+.listHolder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.list .listHeader {
+    display: grid;
+    border-radius: 5px 5px 0px 0px;
+    grid-template-columns: 30% 30% 40%;
+    height: 50px;
+    border-bottom: solid 2px var(--dark-blue);
+    background-color: var(--blue);
+    color: white;
+}
+
+.list .listHeader h3 {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.list .listElt {
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    border-top: solid 1px var(--darker-gray);
+    background-color: var(--gray);
+}
+
+.list * div {
+    width: auto;
+    text-align: left;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.list * div * {
+    width: auto;
+    margin: auto;
+    text-align: left;
+}
+
+.grid-cols-2 {
+    grid-template-columns: 30% 70%;
+}

@@ -11,7 +11,6 @@ class FoodMenuController extends Controller{
 	}
 
 	public function render(){
-		print_r($this->loadFoodMenu());
 		$this->view('FoodMenuView');
 	}
 

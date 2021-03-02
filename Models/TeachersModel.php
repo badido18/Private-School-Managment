@@ -18,9 +18,10 @@ class TeachersModel extends Model {
     Same thing for Student's creation
     */
 
-    public function getTeachers(){
-        $pre = "SELECT id,firstname,lastname,receptiontime FROM teachers " ;
+    public function getTeachers($level){
+        $pre = "SELECT id,firstname,lastname,receptiontime FROM teachers WHERE level = ?" ;
         $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(1,$level,\PDO::PARAM_INT) ;
         $teachers = [] ;
         if ($req->execute()){  
             try {
