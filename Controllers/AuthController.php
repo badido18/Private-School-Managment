@@ -16,7 +16,7 @@ class AuthController extends Controller{
                 $this->redirectAuth() ;
             }
             else{
-                $this->throwError("login");
+                $this->throwError('login');
             };
         }
 	}

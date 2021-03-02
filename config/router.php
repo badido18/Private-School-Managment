@@ -15,11 +15,12 @@ $router->map('GET','/article/[i:id]','Controllers\ArticleController::render','Ar
 $router->map('GET','/enseignants/[i:level]','Controllers\TeacherController::render','Teachers'); 
 $router->map('GET','/emplois/[i:level]','Controllers\ScheduleController::render','Schedules'); 
 $router->map('GET','/emplois/[i:level]/[i:classid]','Controllers\ScheduleController::render','Schedules class');
+$router->map('GET','/space/[a:category]','Controllers\SpacePageController::render','Space Page');
 //withauth routes
-$router->map('GET','/login','Controllers\LoginController::render','Login'); 
+$router->map('GET','/login','Controllers\LoginController::render','Login');  
 $router->map('GET','/login/[a:message]','Controllers\LoginController::render','ErrorLogin'); 
-$router->map('GET','/student','Controllers\StudentSpaceController::render','StudentSpace'); 
-$router->map('GET','/parent','Controllers\ParentSpaceController::render','ParentSpace'); 
+$router->map('GET','/student','Controllers\StudentSpaceController::render','StudentSpaceLogged'); 
+$router->map('GET','/parent','Controllers\ParentSpaceController::render','ParentSpaceLogged'); 
 $router->map('POST','/auth','Controllers\AuthController::login','Auth'); 
 $router->map('POST','/logout','Controllers\AuthController::logout','Logout');
 //admin routes

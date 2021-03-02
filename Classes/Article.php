@@ -10,7 +10,7 @@ class Article extends ClassGlobal{
     private $imgUrl ;
     public $public ;
     public static $NumberOfCategories = 7;
-    public static $Categories = ['everyone','teacher','parents','students','level1','level2','level3'] ;
+    public static  $Categories = ['everyone','teacher','parents','students','level1','level2','level3'] ;
 
     public function __construct($id,$title,$content,$imgUrl=NULL,$public=[]){  
         $this->id = $id ;
@@ -19,6 +19,16 @@ class Article extends ClassGlobal{
         $this->imgUrl = $imgUrl ;
         $this->public = $public ;
     }
+
+    public static function categoryToFrench($categ){
+        switch ($categ) {
+            case 'students': return 'eleves'; break;
+            case 'teachers': return 'enseigants'; break;
+            case 'parents': return 'parents'; break;
+            default: return 'tout le monde'; break;
+        }
+    }
+
     public function setpublic($arg,$val){
         $this->public[$arg] = $val ;
     }

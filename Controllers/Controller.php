@@ -62,9 +62,8 @@ class Controller {
         header('Location: '.$_ENV['APP_HOST']."/$linkFromRoot");
     }
 
-
-    public function redirectToReferer(){
-        header('Location: '.$_SERVER['HTTP_REFERER']);
+    public function redirectToReferer($nextRoute=''){
+        header('Location: '.$_SERVER['HTTP_REFERER'].$nextRoute);
     }
 
     public function throwError($route=NULL){
