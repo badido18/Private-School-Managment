@@ -33,6 +33,7 @@ return array(
     'Controllers\\Admin\\ContactManagmentController' => $baseDir . '/Controllers/Admin/ContactManagmentController.php',
     'Controllers\\Admin\\FoodMenuManagmentController' => $baseDir . '/Controllers/Admin/FoodMenuManagmentController.php',
     'Controllers\\Admin\\PresentationManagmentController' => $baseDir . '/Controllers/Admin/PresentationManagmentController.php',
+    'Controllers\\Admin\\ScheduleManagmentController' => $baseDir . '/Controllers/Admin/ScheduleManagmentController.php',
     'Controllers\\Admin\\StudentManagmentController' => $baseDir . '/Controllers/Admin/StudentManagmentController.php',
     'Controllers\\Admin\\TeachersManagmentController' => $baseDir . '/Controllers/Admin/TeachersManagmentController.php',
     'Controllers\\Admin\\UsersManagmentController' => $baseDir . '/Controllers/Admin/UsersManagmentController.php',

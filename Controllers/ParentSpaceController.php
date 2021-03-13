@@ -64,8 +64,8 @@ class ParentSpaceController extends Controller {
 
     public function getChildrenSchedules(){
         $schedules = [] ;
-        foreach ($this->children as $child ) {
-            $schedules[] = $this->getSchedule($child->__get('classId'));
+        foreach ($this->children as $child ) {  
+            $schedules[$child->firstName] = $this->getSchedule($child->__get('classId'));
         }
         return $schedules ;
     }
@@ -81,7 +81,7 @@ class ParentSpaceController extends Controller {
     public function getChildrenActivities(){
         $acts = [] ;
         foreach ($this->children as $child ) {
-            $acts[] = $this->getActivities($child->__get('id'));
+            $acts[$child->firstName] = $this->getActivities($child->__get('id'));
         }
         return $acts ;
     }
@@ -89,7 +89,7 @@ class ParentSpaceController extends Controller {
     public function getChildrenMarks(){
         $marks = [] ;
         foreach ($this->children as $child ) {
-            $marks[] = $this->getMarks($child->__get('id'));
+            $marks[$child->firstName] = $this->getMarks($child->__get('id'));
         }
         return $marks ;
     }

@@ -42,6 +42,7 @@ class StudentSpaceController extends Controller {
 
     }
 
+
     public function getActivities() {
         $acties = (new ActivityModel)->getActivities($this->userCredentials->__get('id'));
         $new = [] ;

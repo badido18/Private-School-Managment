@@ -56,7 +56,7 @@ class Classe extends ClassGlobal {
 	public function getName(){
 		return $this->year.$this->getLevelFormat($this->levelNumber,$this->major).$this->number ;
 	}
-
+	
 	public function getstudents(){
 		//call model for that request
 		return NULL ;
