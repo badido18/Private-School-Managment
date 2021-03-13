@@ -23,7 +23,7 @@
         <div class="Dash">
             <div class="infoCtn">
                 <?php 
-                    var_dump($this->getCourses() ) ;
+                    var_dump($this->getCourse(1) ) ;
                 ?>
             </div>
 

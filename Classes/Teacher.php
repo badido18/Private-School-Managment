@@ -9,14 +9,16 @@ class Teacher extends ClassGlobal{
     private $firstName ;
     private $lastName ;
     private $birthDate ;
+    private $level ;
     private $workHours;
     private $receptionTime;
     private $scheduleUrl ;
 
-    public function __construct( $id ,$firstName, $lastName, $birthDate = NULL  ,$receptionTime = NULL,$workHours = 0 , $scheduleUrl = NULL){
+    public function __construct( $id ,$firstName, $lastName, $birthDate = NULL  ,$level,$workHours = 0 ,$receptionTime = NULL, $scheduleUrl = NULL){
 		$this->id = $id ;
 		$this->firstName = $firstName ;
 		$this->lastName = $lastName ;
+        $this->level = $level ;
 		$this->birthDate = $birthDate ; 
 		$this->workHours = $workHours ;
 		$this->receptionTime = $receptionTime ;

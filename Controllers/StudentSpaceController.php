@@ -55,12 +55,8 @@ class StudentSpaceController extends Controller {
         return (new MarkModel)->getMarks($this->userCredentials->__get('id'));
     }
 
-    public function getCourses(){
-        $courses = [] ;
-        foreach ($this->marks as $mark) {
-            $courses[] = (new CourseModel)->getCourse($mark->__get('courseId'));
-        }
-        return $courses ;
+    public function getCourse($id){
+           return (new CourseModel)->getCourse($id);
     }
 
     public function render($params){

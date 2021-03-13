@@ -37,15 +37,22 @@ class UsersModel extends Model {
         return $userCredentials ;
     }
 
-    public function getUsers($type){ 
-        $pre = "SELECT id , username FROM users WHERE type = ?" ;
-        $req = $this->dbconnection->prepare($pre) ;
-        $req->bindParam(1,$type,\PDO::PARAM_INT);
+    public function getUsers($type=NULL){ 
+        if(isset($type))
+        {
+            $pre = "SELECT id , username FROM users WHERE type = ?" ;
+            $req = $this->dbconnection->prepare($pre) ;
+            $req->bindParam(1,$type,\PDO::PARAM_INT);
+        }
+        else{
+            $pre = "SELECT * FROM users" ;
+            $req = $this->dbconnection->prepare($pre) ;
+        }
         $users = [] ;
         if ($req->execute()){  
             try {
                 foreach( $req->fetchAll() as $row) {
-                    $users[] = new User(intval($row['id']),$row['username'],NULL,NULL,$type);
+                    $users[] = new User(intval($row['id']),$row['username'],$row['email'],NULL,$type,$row['address'],[$row['phone1'],$row['phone2'],$row['phone3']]);
                 }
             }
             catch(\Exception $e){
@@ -160,9 +167,9 @@ class UsersModel extends Model {
         $user = NULL ;
         if ($req->execute()){  
             try {
-                foreach( $req->fetchAll() as $row) {
-                    $user = new ParentClass(intval($row['id']),$row['firstname'],$row['lastname'],$row['birthdate'],$row['profession']);
-                }
+                $row =  $req->fetch() ;
+                $user = new ParentClass(intval($row['id']),$row['firstname'],$row['lastname'],$row['birthdate'],$row['profession']);
+            
             }
             catch(\Exception $e){
                 die("ERROR: Could not connect. " . $e->getMessage());
@@ -172,5 +179,25 @@ class UsersModel extends Model {
             echo "Something went Bad :(";
         }
         return $user ;
+    } 
+    public function getChildren($parentid){ 
+        $pre = "SELECT * FROM students WHERE parentid = :id " ;
+        $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(':id',$parentid,\PDO::PARAM_INT);
+        $children = [] ;
+        if ($req->execute()){  
+            try {
+                foreach( $req->fetchAll() as $row) {
+                    $children[] = new Student(intval($row['id']),$row['firstname'],$row['lastname'],$row['birthdate'],$row['classid'],$row['parentid']);
+                }
+            }
+            catch(\Exception $e){
+                die("ERROR: Could not connect. " . $e->getMessage());
+            }
+        }
+        else {
+            echo "Something went Bad :(";
+        }
+        return $children ;
     } 
 }

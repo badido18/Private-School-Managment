@@ -120,6 +120,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Controllers\\Admin\\FoodMenuManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/FoodMenuManagmentController.php',
         'Controllers\\Admin\\PresentationManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/PresentationManagmentController.php',
         'Controllers\\Admin\\StudentManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/StudentManagmentController.php',
+        'Controllers\\Admin\\TeachersManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/TeachersManagmentController.php',
         'Controllers\\Admin\\UsersManagmentController' => __DIR__ . '/../..' . '/Controllers/Admin/UsersManagmentController.php',
         'Controllers\\ArticleController' => __DIR__ . '/../..' . '/Controllers/ArticleController.php',
         'Controllers\\AuthController' => __DIR__ . '/../..' . '/Controllers/AuthController.php',

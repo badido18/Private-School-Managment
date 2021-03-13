@@ -13,8 +13,22 @@
         require_once __DIR__."/Components/AdminNavbar.php";
     ?>
     <div class="Main">
-        <div class="leftDrawer"></div>
-        <div class="Dash"></div>
+        <div class="leftDrawer">
+            <br><br>
+            <a <?php echo "href=\"/parent\"" ?>><div class="drawerOption"><p>Informations personelles</p></div></a>
+            <a <?php echo "href=\"/parent/\"$this->id/schedule" ?>><div class="drawerOption"><p>Emploi du temps</p></div></a>
+            <a <?php echo "href=\"/parent/\"$this->id/marks" ?>><div class="drawerOption"><p>Notes</p></div></a>
+            <a <?php echo "href=\"/parent/\"$this->id/activities" ?>><div class="drawerOption"><p>Activites extra</p></div></a>
+            <a <?php echo "href=\"/parent/\"$this->id/observations" ?>><div class="drawerOption"><p>Remarques Enseignants</p></div></a>
+        </div>
+        <div class="Dash">
+            <div class="infoCtn">
+                <?php 
+                    var_dump($this->infos) ;
+                ?>
+            </div>
+
+        </div>
     </div>
     
 </body>

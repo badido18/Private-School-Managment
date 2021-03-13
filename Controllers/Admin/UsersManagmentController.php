@@ -53,6 +53,9 @@ class UsersManagmentController extends AdminController {
 		}
 	}
 
+	public function loadUsers(){
+		return (new UsersModel)->getUsers();
+	}
 
 
 	public function render($params){
