@@ -47,6 +47,10 @@ class FoodMenuManagmentController extends AdminController {
 		}
 	}
 
+	public function loadFoodMenu(){
+		return (new FoodMenuModel())->getMenu();
+	}
+
 
 
 	public function render($params){

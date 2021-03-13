@@ -2,24 +2,24 @@
 
 namespace Models ;
 
+use Classes\Course;
 use Classes\Mark;
 
-class MarkModel extends Model {
+class CourseModel extends Model {
 
     public function __construct(){
         parent::__construct();
     }
 
-    public function getMarks($studentId){
-        $pre = "SELECT * FROM marks WHERE studentid = ?" ;
+    public function getCourse($id){
+        $pre = "SELECT * FROM courses WHERE id = ?" ;
         $req = $this->dbconnection->prepare($pre) ;
-        $req->bindParam(1,$studentId,\PDO::PARAM_INT);
-        $marks = [] ;
+        $req->bindParam(1,$id,\PDO::PARAM_INT);
+        $course = NULL;
         if ($req->execute()){  
             try {
-                foreach( $req->fetchAll() as $row) {
-                    $marks[] = new Mark($row['id'],$row['studentid'],$row['courseid'],$row['mark'],$row['observation']);
-                }
+                $row = $req->fetch() ;
+                $course = new Course($row['id'],$row['name'],$row['teacherid']);
             }
             catch(\Exception $e){
                 die("ERROR: Could not connect. " . $e->getMessage());
@@ -28,6 +28,6 @@ class MarkModel extends Model {
         else {
             echo "Something went Bad :(";
         }
-        return $marks ;
+        return $course ;
     }
 }

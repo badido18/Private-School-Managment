@@ -30,7 +30,6 @@ class CarrouselModel extends Model {
         return $imgUrls ;
     }
 
-
     public function addToCarrousel($imgUrl){
 		$pre = "INSERT INTO carrousels (imgUrl) VALUES (?)" ;
 		$req = $this->dbconnection->prepare($pre) ;

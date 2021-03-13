@@ -7,6 +7,11 @@ use Models\ContactModel;
 
 class ContactManagmentController extends AdminController {
 
+	public function loadContacts(){
+		return (new ContactModel())->getContacts();
+	}
+
+
 	public function addContact(){
 		if(isset($_POST['content'])){
 			$type = $_POST['type'] ;

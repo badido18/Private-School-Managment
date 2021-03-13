@@ -2,6 +2,8 @@
 
 namespace Models ;
 
+use Classes\ParentClass;
+use Classes\Student;
 use Classes\User;
 
 class UsersModel extends Model {
@@ -14,7 +16,7 @@ class UsersModel extends Model {
     //passwords are hashed with sha1()
 
     public function getUser($username,$passwd){ 
-        $pre = "SELECT * FROM users WHERE (username = :username OR email = :username) AND (passwd = SHA1(:passwd))" ;
+        $pre = "SELECT * FROM users WHERE (username = :username OR email = :username) AND (passwd = :passwd )" ;
         $req = $this->dbconnection->prepare($pre) ;
         $req->bindParam(':username',$username,\PDO::PARAM_STR);
         $req->bindParam(':passwd',$passwd,\PDO::PARAM_STR);
@@ -129,4 +131,46 @@ class UsersModel extends Model {
 		}
 		return FALSE ;
 	}
+
+    public function getStudentInfo($id){ 
+        $pre = "SELECT * FROM students WHERE id = :id " ;
+        $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(':id',$id,\PDO::PARAM_INT);
+        $user = NULL ;
+        if ($req->execute()){  
+            try {
+                foreach( $req->fetchAll() as $row) {
+                    $user = new Student(intval($row['id']),$row['firstname'],$row['lastname'],$row['birthdate'],$row['classid'],$row['parentid']);
+                }
+            }
+            catch(\Exception $e){
+                die("ERROR: Could not connect. " . $e->getMessage());
+            }
+        }
+        else {
+            echo "Something went Bad :(";
+        }
+        return $user ;
+    } 
+
+    public function getParentInfo($id){ 
+        $pre = "SELECT * FROM parents WHERE id = :id " ;
+        $req = $this->dbconnection->prepare($pre) ;
+        $req->bindParam(':id',$id,\PDO::PARAM_INT);
+        $user = NULL ;
+        if ($req->execute()){  
+            try {
+                foreach( $req->fetchAll() as $row) {
+                    $user = new ParentClass(intval($row['id']),$row['firstname'],$row['lastname'],$row['birthdate'],$row['profession']);
+                }
+            }
+            catch(\Exception $e){
+                die("ERROR: Could not connect. " . $e->getMessage());
+            }
+        }
+        else {
+            echo "Something went Bad :(";
+        }
+        return $user ;
+    } 
 }

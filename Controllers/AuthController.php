@@ -9,10 +9,11 @@ class AuthController extends Controller{
 	public function login(){
         if (isset($_POST['username'])){
             $username = $_POST['username'];
-            $passwd = $_POST['passwd'];
+            $passwd = sha1($_POST['passwd']);
             $userCredentials = (new UsersModel)->getUser($username,$passwd);
             if(isset($userCredentials)){
                 $this->setCookies($userCredentials) ;
+                $this->setSession($userCredentials);
                 $this->redirectAuth() ;
             }
             else{
@@ -27,6 +28,11 @@ class AuthController extends Controller{
         setcookie($_ENV['PREFIX'].'/hash_passwd',$userCredentials->__get('passwd')) ;
         setcookie($_ENV['PREFIX'].'/user_type',$userCredentials->__get('type')) ;
     
+    }
+
+    private function setSession($userCredentials){
+        $_SESSION['username'] = $userCredentials->__get('username') ;
+        $_SESSION['passwd'] = $userCredentials->__get('passwd') ;
     }
 
     private function unsetCookies(){

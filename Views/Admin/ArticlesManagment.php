@@ -26,7 +26,7 @@
         <div class="formctn">
             <form class="dashform" action="/admin/articles/add" method="post">
                 <input type="text" required name="title" placeholder="Titre">
-                <textarea type="text" required name="content" placeholder="Contenu"></textarea>
+                <textarea type="text"  name="content" placeholder="Contenu" required></textarea>
                 <input type="text"  name="imgUrl" placeholder="Lien vers l'image">
                 <div class="selectionctn">
                     <div class="selection"><p>Tout le monde</p><input type="checkbox" name="everyone"></div>
@@ -94,9 +94,17 @@
                 var trash = document.getElementById("trash");
                 arg.addEventListener("change",(e) =>{
 
-                    if ((arg.value.includes("category") && tmp == 0 )||(arg.value.includes("category") && tmp ==0 ))
+                    if (arg.value.includes("category") && tmp == 0 ){
                         form.insertBefore(trash.children[0],form.children[2]) ;
                         trash.appendChild(form.children[3]);
+                        tmp = 1 ;
+                    }
+                    else if (!arg.value.includes("category") && tmp ==1 ){
+                        form.insertBefore(trash.children[0],form.children[2]) ;
+                        trash.appendChild(form.children[3]);
+                        tmp = 0 ;
+                    }
+                    
                 },false)
             }
         selectAdapt();

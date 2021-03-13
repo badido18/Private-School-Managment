@@ -6,6 +6,11 @@ use Models\PresentationModel;
 
 class PresentationManagmentController extends AdminController {
 
+
+	public function loadPresentation(){
+		return (new PresentationModel())->getPres();
+	}
+
 	public function addPresentation(){
 		if(isset($_POST['paragraph']) or isset($_POST['imgUrl']) ){
 			$paragraph = $_POST['paragraph'] ;

@@ -524,6 +524,7 @@ form textarea {
     color: var(--blue);
     font-size: 14px;
     min-height: 40px;
+    width: 98%;
     font-weight: normal;
     transition: 0.3s ease;
     padding-left: 15px;
@@ -845,7 +846,6 @@ select *:hover {
 }
 
 .Dash {
-    margin: auto;
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -908,4 +908,12 @@ form .selectionctn .selection * {
 
 .adminComponent .formctn .dashform input {
     margin-top: 10px;
+}
+
+.txt {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    margin-right: -5px;
 }

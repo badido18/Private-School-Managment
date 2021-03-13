@@ -32,6 +32,10 @@ class CarrouselManagmentController extends AdminController {
 		}
 	}
 
+	public function loadDiapo(){
+		return (new CarrouselModel())->getImageUrls();
+	}
+	
 	public function render($params){
 		$this->view('Admin/CarrouselManagment');
 	}
