@@ -9,6 +9,7 @@ class TeacherController extends Controller{
 
 	public $level ;
 	public $levelName ;
+    public $space = "teachers" ;
 
 	public function loadTeachers(){
 		return (new TeachersModel())->getTeachers($this->level);

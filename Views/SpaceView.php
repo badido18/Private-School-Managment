@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Se Connecter- Ecole privé</title>
+	<title>Espace <?php echo $this->categoryFr ; ?> - Ecole privé</title>
 	<link rel="stylesheet" href="/src/style/design.css">
 	<link rel="icon" href="/src/img/logo.png">
 </head>
@@ -24,7 +24,7 @@
         </div>
         </div>
 
-		<h1>Articles Relatives au <?php echo $this->categoryFr ; ?></h1>
+		<h1>Articles relatives au <?php echo $this->categoryFr ; ?></h1>
         <?php
             require_once __DIR__.'/Components/ArticlesContainer.php';
             require_once __DIR__.'/Components/ArticlesPageViewer.php';

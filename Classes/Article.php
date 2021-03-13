@@ -10,7 +10,8 @@ class Article extends ClassGlobal{
     private $imgUrl ;
     public $public ;
     public static $NumberOfCategories = 7;
-    public static  $Categories = ['everyone','teacher','parents','students','level1','level2','level3'] ;
+    public static  $Categories = ['everyone','teachers','parents','students','level1','level2','level3','1'] ;
+    public static  $CategoriesForDb = ['everyone','teachers','parents','students','level1','level2','level3'] ;
 
     public function __construct($id,$title,$content,$imgUrl=NULL,$public=[]){  
         $this->id = $id ;
@@ -23,8 +24,9 @@ class Article extends ClassGlobal{
     public static function categoryToFrench($categ){
         switch ($categ) {
             case 'students': return 'eleves'; break;
-            case 'teachers': return 'enseigants'; break;
+            case 'teachers': return 'enseignants'; break;
             case 'parents': return 'parents'; break;
+            case 'admin': return 'administrateur'; break;
             default: return 'tout le monde'; break;
         }
     }

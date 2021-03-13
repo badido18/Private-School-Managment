@@ -33,6 +33,7 @@ a {
     --dark-gray: #646464;
     --darker-gray: #b8b8b8;
     --red: rgb(235, 57, 57);
+    --dark-red: rgb(148, 36, 36);
 }
 
 h3 {
@@ -66,6 +67,10 @@ h3 {
 
 .nav .social {
     margin-right: 0;
+}
+
+.w-auto {
+    width: auto;
 }
 
 .social {
@@ -171,7 +176,7 @@ h3 {
 
 .menu {
     width: 100%;
-    height: 70px;
+    height: 60px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -187,8 +192,8 @@ h3 {
     transition: 0.3s ease;
     display: flex;
     height: 100%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
 
 .menu a p {
@@ -211,6 +216,14 @@ h3 {
 
 .bk-blue {
     background-color: var(--blue);
+}
+
+.bk-red {
+    background-color: var(--red);
+}
+
+.bk-red:hover {
+    background-color: var(--dark-red);
 }
 
 .co-dark-gray {
@@ -460,7 +473,7 @@ h3 {
     animation: fadeIn 1s ease;
 }
 
-.presentation .text form {
+.presentation form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -475,37 +488,68 @@ h3 {
     margin-left: 0px;
 }
 
-.presentation .text form input {
+.presentation form * {
+    width: auto;
+    height: 45px;
+    margin: 15px;
+    margin-left: 0px;
+}
+
+form input {
     border: solid 2px var(--light-blue);
     border-radius: 5px;
     color: var(--blue);
     font-size: 14px;
+    min-height: 40px;
     font-weight: normal;
     transition: 0.3s ease;
     padding-left: 15px;
 }
 
-.presentation .text form button {
-    width: 515px;
-    height: 50px;
-}
-
-.presentation .text form input::placeholder {
+form input::placeholder {
     color: var(--light-blue);
     font-weight: normal;
 }
 
-.presentation .text form input:focus {
+form input:focus {
     outline-color: var(--blue);
     font-weight: bold;
     padding-left: 15px;
     transform: scale(1.04);
 }
 
+form textarea {
+    border: solid 2px var(--light-blue);
+    border-radius: 5px;
+    color: var(--blue);
+    font-size: 14px;
+    min-height: 40px;
+    font-weight: normal;
+    transition: 0.3s ease;
+    padding-left: 15px;
+}
+
+form textarea::placeholder {
+    color: var(--light-blue);
+    font-weight: normal;
+}
+
+form textarea:focus {
+    outline-color: var(--blue);
+    font-weight: bold;
+    padding-left: 15px;
+    transform: scale(1.04);
+}
+
+form button {
+    width: 515px;
+    min-height: 50px;
+}
+
 button {
     border: none;
     height: 50px;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
     margin: auto;
     border-radius: 5px;
@@ -597,7 +641,7 @@ button:focus {
     animation: fadeIn 1s;
 }
 
-.presentation .text3 select {
+select {
     width: 100%;
     height: 45px;
     margin: 15px;
@@ -609,14 +653,14 @@ button:focus {
     margin-left: 0px;
 }
 
-.presentation .text3 select option {
+select option {
     border-radius: 5px;
     color: var(--blue);
     background-color: var(--gray);
     cursor: pointer;
 }
 
-.presentation .text3 select *:hover {
+select *:hover {
     background-color: var(--gray);
 }
 
@@ -724,4 +768,144 @@ button:focus {
 
 .grid-cols-2 {
     grid-template-columns: 30% 70%;
+}
+
+.spacenav {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border-bottom: solid 3px var(--gray);
+    animation: opacIn ease 0.3s;
+    flex-direction: row;
+}
+
+.spacenav .logo {
+    width: 240px;
+    max-width: 20%;
+    margin-right: 30px;
+    margin-left: 30px;
+    max-width: 30%;
+    display: flex;
+    ;
+    flex-direction: row;
+}
+
+.spacenav .logo * {
+    margin: auto;
+}
+
+.spacenav * {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.spacenav img {
+    margin-right: 20px;
+}
+
+.spacenav form {
+    margin: auto;
+    margin-right: 50px;
+}
+
+.Main {
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 18% auto;
+}
+
+.leftDrawer {
+    background-color: var(--gray);
+    display: flex;
+    width: auto;
+    max-width: 100%;
+    flex-direction: column;
+}
+
+.drawerOption {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+}
+
+.drawerOption p {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.drawerOption:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.Dash {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 2.5%;
+}
+
+form .selectionctn {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form .selectionctn .selection {
+    display: flex;
+    width: auto;
+    height: 50px;
+    margin: auto;
+    max-width: 300px;
+}
+
+form .selectionctn .selection * {
+    padding: 2px;
+}
+
+.adminComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.adminComponent h1 {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.adminComponent .formctn {
+    width: 100%;
+}
+
+.adminComponent .formctn .dashform {
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+}
+
+.adminComponent .formctn .dashform * {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.adminComponent .formctn .dashform button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.adminComponent .formctn .dashform input {
+    margin-top: 10px;
 }

@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=768px, initial-scale=1.0">
     <title>Gestion des Classes</title>
+	<link rel="stylesheet" href="/src/style/design.css">
+	<link rel="icon" href="/src/img/logo.png">   
 </head>
 <body>
-<form action="/logout" method="post">
-    <input type="submit" value="se deconnecter">
-</form>
-<form action="/admin" method="get">
-    <button>Retour</button>
-</form>
+<?php
+    require_once __DIR__."/../Components/AdminNavbar.php" ;
+?>
+<div class="Main" id="pff">
+
+    <?php 
+        require_once __DIR__."/../Components/leftDrawer.php";
+     ?>
+    <div class="Dash">
 
 <form action="/admin/classes/add" method="post">
     <input type="text" required name="level" placeholder="Niveau">
@@ -45,5 +50,7 @@
     .then( data => console.log(data) );
 </script>
 
+    </div>
+</div>
 </body>
 </html>

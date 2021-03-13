@@ -84,7 +84,7 @@ class ArticlesModel extends Model {
 		$req->bindParam(2,$article->__get('content'),\PDO::PARAM_STR);
 		$req->bindParam(3,$article->__get('imgUrl'),\PDO::PARAM_STR);
 		$one = 1; $null = NULL ; $i=4 ;
-		foreach (Article::$Categories as $arg){   
+		foreach (Article::$CategoriesForDb  as $arg){   
 			if ( array_key_exists($arg,$article->public) )
 				$req->bindParam($i,$one,\PDO::PARAM_INT);
 			else
@@ -97,7 +97,7 @@ class ArticlesModel extends Model {
 		else {
 			echo "Something went Bad :(";
 		}
-		return FALSE ;
+		return TRUE ;
 	}
 
 	public function deleteArticle($id){

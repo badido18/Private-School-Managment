@@ -51,7 +51,7 @@ class ContactManagmentController extends AdminController {
 
 
 
-	public function render(){
+	public function render($params){
 		$this->view('Admin/ContactManagment');
 	}
 

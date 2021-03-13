@@ -131,6 +131,7 @@ class ComposerStaticInitcf48f5cc5e127a84893506190c38b115
         'Controllers\\ParentSpaceController' => __DIR__ . '/../..' . '/Controllers/ParentSpaceController.php',
         'Controllers\\PresentationController' => __DIR__ . '/../..' . '/Controllers/PresentationController.php',
         'Controllers\\ScheduleController' => __DIR__ . '/../..' . '/Controllers/ScheduleController.php',
+        'Controllers\\SpacePageController' => __DIR__ . '/../..' . '/Controllers/SpacePageController.php',
         'Controllers\\StudentSpaceController' => __DIR__ . '/../..' . '/Controllers/StudentSpaceController.php',
         'Controllers\\TeacherController' => __DIR__ . '/../..' . '/Controllers/TeacherController.php',
         'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',

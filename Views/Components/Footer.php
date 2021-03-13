@@ -6,6 +6,7 @@
     <a href="/education/2"> <p>Moyen</p></a>
     <a href="/education/3"> <p>Secondaire</p></a>
     <a href="/space/student"> <p>Espace Eleve</p></a>
+    <a href="/space/teacher"> <p>Espace Enseignant</p></a>
     <a href="/space/parent"> <p>Espace Parent</p></a>
     <a href="/contact"> <p>Contact</p></a>
     <a href="/login"> <p>Se connecter</p></a>

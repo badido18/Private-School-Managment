@@ -21,12 +21,14 @@ $router->map('GET','/login','Controllers\LoginController::render','Login');
 $router->map('GET','/login/[a:message]','Controllers\LoginController::render','ErrorLogin'); 
 $router->map('GET','/student','Controllers\StudentSpaceController::render','StudentSpaceLogged'); 
 $router->map('GET','/parent','Controllers\ParentSpaceController::render','ParentSpaceLogged'); 
+$router->map('GET','/ens','Controllers\TeacherController::renderDashboard','Teacher'); 
 $router->map('POST','/auth','Controllers\AuthController::login','Auth'); 
 $router->map('POST','/logout','Controllers\AuthController::logout','Logout');
 //admin routes
 $router->map('GET','/admin','Controllers\Admin\AdminController::render','Admin panel');  
 //articles managment
 $router->map('GET','/admin/articles/managment','Controllers\Admin\ArticlesManagmentController::render','Articles panel');  
+$router->map('GET','/admin/articles/managment/[i:page]','Controllers\Admin\ArticlesManagmentController::render','Articles panel pages');  
 $router->map('POST','/admin/articles/add','Controllers\Admin\ArticlesManagmentController::addArticle','Article add');   
 $router->map('POST','/admin/articles/delete','Controllers\Admin\ArticlesManagmentController::deleteArticle','Article delete');  
 $router->map('POST','/admin/articles/update','Controllers\Admin\ArticlesManagmentController::updateArticle','Article update');  
@@ -60,5 +62,4 @@ $router->map('POST','/admin/classes/add','Controllers\Admin\ClassManagmentContro
 $router->map('POST','/admin/classes/delete','Controllers\Admin\ClassManagmentController::deleteClass','Class delete');  
 $router->map('POST','/admin/classes/update','Controllers\Admin\ClassManagmentController::updateClass','Class update');  
 $router->map('GET','/admin/classes/get','Controllers\Admin\ClassManagmentController::getClassesJson','Class get'); 
-//non implemented routes
-$router->map('GET','/ens','Controllers\TeacherController::renderDashboard','Teacher'); 
+//other routes

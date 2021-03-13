@@ -45,6 +45,7 @@ return array(
     'Controllers\\ParentSpaceController' => $baseDir . '/Controllers/ParentSpaceController.php',
     'Controllers\\PresentationController' => $baseDir . '/Controllers/PresentationController.php',
     'Controllers\\ScheduleController' => $baseDir . '/Controllers/ScheduleController.php',
+    'Controllers\\SpacePageController' => $baseDir . '/Controllers/SpacePageController.php',
     'Controllers\\StudentSpaceController' => $baseDir . '/Controllers/StudentSpaceController.php',
     'Controllers\\TeacherController' => $baseDir . '/Controllers/TeacherController.php',
     'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',
